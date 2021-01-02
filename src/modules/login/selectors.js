@@ -1,1 +1,1 @@
-export const getCurrentUserName = state => state.loginPage.currentUser.name;
+export const getCurrentUserName = state => state.loginPage.name;

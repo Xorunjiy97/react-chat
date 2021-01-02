@@ -1,0 +1,1 @@
+export const getCurrentUserStatus = state => state.loginPage.isLoged;
