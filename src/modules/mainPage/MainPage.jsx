@@ -2,24 +2,14 @@ import React from 'react';
 import Login from '../login';
 import Messenger from '../messenger';
 
-export default class MainPage extends React.PureComponent {
-    constructor(props) {
-        super(props);
+const MainPage = props => {
+    const { isLoged } = props;
 
-        this.state = {
-            isLogged: false,
-        }
-    }
-
-    render() {
-        const {
-            isLogged,
-        } = this.state;
-
-        return (
-            <>
-                {!isLogged ? <Login /> : <Messenger />}
-            </>
-        )
-    }
+    return (
+        <>
+            {!isLoged ? <Login /> : <Messenger />}
+        </>
+    )
 }
+
+export default React.memo(MainPage);
