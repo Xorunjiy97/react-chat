@@ -4,7 +4,7 @@ import Messenger from '../messenger/Messenger';
 
 const MainPage = props => {
     const { isLoged } = props;
-
+    console.log(props);
     return (
         <>
             {!isLoged ? <Login /> : <Messenger />}
