@@ -5,7 +5,7 @@ const initialState = {
         isLoged: false,
     
 }
-
+// eslint-disable-next-line
 export default (state = initialState, action) => {
     switch (action.type) {
         case constants.SAVE_CURRENT_USER_STORE:
