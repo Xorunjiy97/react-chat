@@ -1,8 +1,8 @@
 import React from 'react';
-import Login from './login';
-import Messenger from './messenger/Messenger';
+import Login from '../login';
+import Messenger from '../messenger';
 
-export default class Modules extends React.PureComponent {
+export default class MainPage extends React.PureComponent {
     constructor(props) {
         super(props);
 

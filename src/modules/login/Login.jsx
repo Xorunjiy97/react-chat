@@ -7,7 +7,6 @@ class Login extends React.PureComponent {
 
         this.state = {
             login: '',
-            password: '',
         }
         console.log('-----constructor----');
     }
@@ -36,20 +35,11 @@ class Login extends React.PureComponent {
         } = event.target;
         const {
             onSaveLogin,
-            onSavePassword,
         } = this;
 
-        if(name === 'password') {
-            onSavePassword(value);
-        } else if (name === 'login') {
+         if (name === 'login') {
             onSaveLogin(value);
         }
-    }
-
-    onSavePassword = value => {
-        this.setState(() => ({
-            password: value,
-        }));
     }
 
     onSaveLogin = value => {
@@ -82,11 +72,6 @@ class Login extends React.PureComponent {
                        onChange={handleInput}
                        className={'login__input'}
                        placeholder={'Введите логин...'}
-                />
-                <input name={'password'}
-                       onChange={handleInput}
-                       className={'password__input'}
-                       placeholder={'Введите пароль...'}
                 />
                 <button onClick={handleClick}
                         children={'Sign Up'}
