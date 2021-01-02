@@ -3,7 +3,7 @@ import * as selectors from './selectors';
 import { connect } from 'react-redux';
 
 const mapStateToProps = state => ({
-    currentLoged: selectors.getCurrentUserStatus(state),
+    isLoged: selectors.getCurrentUserStatus(state),
 });
 
 

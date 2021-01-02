@@ -49,10 +49,15 @@ class Login extends React.PureComponent {
     }
 
     handleClick = event => {
-        const { saveCurrentUser } = this.props;
+        const { 
+            saveCurrentUser,
+            currentUserLoged 
+            } = this.props;
         event.preventDefault();
 
         saveCurrentUser(this.state.login);
+        currentUserLoged();
+
     }
 
     render() {

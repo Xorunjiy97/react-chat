@@ -11,7 +11,6 @@ export default (state = initialState, action) => {
         case constants.SAVE_CURRENT_USER_STORE:
             return {
                 ...state,
-                    ...state,
                     name: action.payload,
                
             }
