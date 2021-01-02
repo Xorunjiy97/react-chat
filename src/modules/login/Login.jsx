@@ -66,17 +66,29 @@ class Login extends React.PureComponent {
         } = this;
         console.log('--------render-------')
         return (
-            <div className={'wrapper'}>
-                <input name={'login'}
-                       value={this.state.login}
-                       onChange={handleInput}
-                       className={'login__input'}
-                       placeholder={'Введите логин...'}
-                />
-                <button onClick={handleClick}
-                        children={'Sign Up'}
-                />
-            </div>
+                <div className = {'root__avtoriz-container'}>
+                    <div className = {'avtoriz-container__heder-div'}>
+                        <h1 className = {'heder-div__heder-text'}
+                            children={'Salam Aleykum'}
+                        ></h1>
+                    </div>
+                    <div className = {'window__login-body'}>
+                        <div className = {'avtoriz-container__login-input-div'}>
+                            <input name={'login'}
+                                placeholder= {'Введите логин...'}
+                                className = {'login-input-div__login-input'}
+                                onChange={handleInput}
+                                /> 
+                            
+                        </div>
+                    </div>
+                    <div className = {'avtoriz-container__login-button-div'}>
+                        <button id = {'login-button'}
+                        className = {'login-button-div__login-button'}
+                        onClick={handleClick}
+                        ></button>
+                    </div>
+                </div>
         );
     }
 }
