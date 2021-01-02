@@ -1,6 +1,6 @@
 import React from 'react';
 import Login from '../login';
-import Messenger from '../messenger/Messenger';
+import Messenger from '../messenger';
 
 const MainPage = props => {
     const { isLoged } = props;
