@@ -1,31 +1,13 @@
 import React from 'react';
 import './loginStyles.css';
 
-class Login extends React.PureComponent {
+export default class Login extends React.PureComponent {
     constructor(props) {
         super(props);
 
         this.state = {
             login: '',
         }
-        console.log('-----constructor----');
-    }
-
-    componentDidMount() {
-        console.log('--------componentDidMount------');
-    }
-
-    componentDidUpdate(prevProps, prevState, snapshot) {
-        console.log('-------componentDidUpdate------');
-    }
-
-    componentDidCatch(error, errorInfo) {
-        console.log('error', error);
-        console.log('errorInfo', errorInfo)
-    }
-
-    componentWillUnmount() {
-        console.log('--------componentWillUnmount-------');
     }
 
     handleInput = event => {
@@ -33,9 +15,8 @@ class Login extends React.PureComponent {
             name,
             value,
         } = event.target;
-        const {
-            onSaveLogin,
-        } = this;
+
+        const { onSaveLogin } = this;
 
          if (name === 'login') {
             onSaveLogin(value);
@@ -49,36 +30,44 @@ class Login extends React.PureComponent {
     }
 
     handleClick = event => {
-        const { saveCurrentUser } = this.props;
+        // const {
+        //     saveCurrentUser,
+        //     } = this.props;
         event.preventDefault();
 
-        saveCurrentUser(this.state.login);
+        // saveCurrentUser(this.state.login);
+
     }
 
     render() {
-        const {
-            currentUserName,
-        } = this.props;
-        console.log(this.props)
         const {
             handleClick,
             handleInput,
         } = this;
         console.log('--------render-------')
         return (
-            <div className={'wrapper'}>
-                <input name={'login'}
-                       value={this.state.login}
-                       onChange={handleInput}
-                       className={'login__input'}
-                       placeholder={'Введите логин...'}
-                />
-                <button onClick={handleClick}
-                        children={'Sign Up'}
-                />
+            <div className = {'root__avtoriz-container'}>
+                <div className = {'avtoriz-container__heder-div'}>
+                    <h1 className = {'heder-div__heder-text'}
+                        children={'Salam Aleykum'}
+                    />
+                </div>
+                <div className = {'window__login-body'}>
+                    <div className = {'avtoriz-container__login-input-div'}>
+                        <input name={'login'}
+                               placeholder= {'Введите логин...'}
+                               className = {'login-input-div__login-input'}
+                               onChange={handleInput}
+                        />
+                    </div>
+                </div>
+                <div className = {'avtoriz-container__login-button-div'}>
+                    <button id = {'login-button'}
+                            className = {'login-button-div__login-button'}
+                            onClick={handleClick}
+                    />
+                </div>
             </div>
         );
     }
 }
-
-export default Login;
