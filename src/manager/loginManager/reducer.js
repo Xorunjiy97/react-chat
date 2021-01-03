@@ -1,8 +1,9 @@
 import constants from '../../constants';
 
 const initialState = {
-        name: '',
+        user: '',
         isLoged: false,
+        chat: []
     
 }
 // eslint-disable-next-line
@@ -11,7 +12,7 @@ export default (state = initialState, action) => {
         case constants.SAVE_CURRENT_USER_STORE:
             return {
                 ...state,
-                    name: action.payload,
+                    user: action.payload,
                
             }
             case constants.OPEN_CHAT_PAGE:
@@ -24,6 +25,11 @@ export default (state = initialState, action) => {
             return {
                 ...state,
                 isLoged: false,
+            };
+        case constants.SAVE_CURRENT_MESSAGE_STORE:
+            return {
+                ...state,
+                chat: [...state.chat, action.payload],               
             };
         default:
             return state;
