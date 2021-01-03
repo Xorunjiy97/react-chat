@@ -46,7 +46,6 @@ class Login extends React.PureComponent {
         const {
             currentUserName,
         } = this.props;
-        console.log(this.props)
         const {
             handleClick,
             handleInput,
