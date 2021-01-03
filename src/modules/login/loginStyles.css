@@ -1,39 +1,43 @@
 body {
-  background: #ccc;
-}
-
-#root {
-  margin-top: 100px;
-  justify-content: center;
-  display: flex;
-}
-
-.root__main-container {
-  height: 500px;
-  width: 300px;
-  border: solid 5px black;
-  border-radius: 25px;
-  justify-content: center;
-}
-
-.main-container__message-div {
-  border: solid 2px black;
-  display: flex;
-  height: 370px;
-  margin: 10px;
-  border-top-left-radius: 10px;
-  border-top-right-radius: 10px;
-  background-color: #45668e;
-}
-
-.main-container__footer-container {
-  margin: 20px;
-  height: 50px;
-  align-items: center;
-  display: flex;
-  border-radius: 10px;
-}
-
+    background: #ccc;
+  }
+  
+  #root {
+    margin-top: 100px;
+    justify-content: center;
+    display: flex;
+  }
+  
+  .root__main-container {
+    height: 500px;
+    width: 300px;
+    border: solid 5px black;
+    border-radius: 25px;
+    justify-content: center;
+  }
+  
+  .main-container__message-div {
+    border: solid 2px black;
+    display: flex;
+    height: 370px;
+    margin: 10px;
+    margin-top: 20px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    background-color: #45668e;
+  }
+  
+  .main-container__footer-container {
+    margin: 0 10px;
+    height: 50px;
+    align-items: center;
+    display: flex;
+    margin-top: 20px;
+    margin-left: 20px;
+    border-radius: 10px;
+    display: flex;
+  }
+  
   .footer-container__text-arena {
     font-size: 20px;
     font-family: Georgia, "Times New Roman", Times, serif;
@@ -45,7 +49,7 @@ body {
     padding: 10px;
     outline: none;
   }
-
+  
   .footer-container__send-message {
     height: 44px;
     width: 60px;
@@ -54,7 +58,7 @@ body {
     border: 1px solid #7a6390;
     border-radius: 20px;
   }
-
+  
   .root__avtoriz-container {
     height: 500px;
     width: 300px;
@@ -62,7 +66,7 @@ body {
     border-radius: 25px;
     justify-content: center;
   }
-
+  
   .avtoriz-container__heder-div {
     justify-content: center;
     display: flex;
@@ -71,7 +75,7 @@ body {
     font-size: 20px;
     font-family: sans-serif;
   }
-
+  
   .login-input-div__login-input {
     font-size: 20px;
     font-family: Georgia, "Times New Roman", Times, serif;
@@ -83,7 +87,7 @@ body {
     padding: 10px;
     outline: none;
   }
-
+  
   .login-button-div__login-button {
     height: 50px;
     width: 90px;
@@ -92,7 +96,7 @@ body {
     border: 1px solid #7a6390;
     border-radius: 20px;
   }
-
+  
   .avtoriz-container__vindow-body {
     height: 320px;
     display: flex;
@@ -101,17 +105,30 @@ body {
     flex-direction: column;
     border-bottom: 5px solid black;
   }
-
+  
   .root__log-out-button {
     height: 30px;
     width: 30px;
     border-radius: 20px;
     background-color: aqua;
   }
-
+  
   .message-li__message-ul {
     list-style: none;
     display: flex;
     flex-flow: column-reverse;
     flex-direction: column;
+  }
+  
+  .ul_li {
+    border: solid 1px black;
+    border-radius: 10px;
+    padding-left: 10px;
+    margin-bottom: 5px;
+    width: 200px;
+    display: table-cell;
+    vertical-align: middle;
+    color: white;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    overflow-y: auto;
   }

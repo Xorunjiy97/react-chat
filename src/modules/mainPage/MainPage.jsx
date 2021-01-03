@@ -1,16 +1,15 @@
 import React from 'react';
 import Login from '../login';
-import Messenger from '../messenger/Messenger.jsx';
+import Messenger from '../messenger/Messenger';
 
 const MainPage = props => {
-    const { isLogged } = props;
+    const { isLoged } = props;
     console.log(props);
-
     return (
         <>
-            {!isLogged ? <Login /> : <Messenger />}
+            {!isLoged ? <Login /> : <Messenger />}
         </>
-    );
+    )
 }
 
 export default React.memo(MainPage);
