@@ -1,15 +1,117 @@
-#root {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+body {
+  background: #ccc;
 }
 
-.wrapper {
-    width: 500px;
-    height: 200px;
-    background-color: #000000;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+#root {
+  margin-top: 100px;
+  justify-content: center;
+  display: flex;
 }
+
+.root__main-container {
+  height: 500px;
+  width: 300px;
+  border: solid 5px black;
+  border-radius: 25px;
+  justify-content: center;
+}
+
+.main-container__message-div {
+  border: solid 2px black;
+  display: flex;
+  height: 370px;
+  margin: 10px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  background-color: #45668e;
+}
+
+.main-container__footer-container {
+  margin: 20px;
+  height: 50px;
+  align-items: center;
+  display: flex;
+  border-radius: 10px;
+}
+
+  .footer-container__text-arena {
+    font-size: 20px;
+    font-family: Georgia, "Times New Roman", Times, serif;
+    height: 40px;
+    width: 200px;
+    border: 1px solid #fff;
+    background: rgba(255, 255, 255, 0.25);
+    border-radius: 20px;
+    padding: 10px;
+    outline: none;
+  }
+
+  .footer-container__send-message {
+    height: 44px;
+    width: 60px;
+    margin-left: 10px;
+    background-color: #8b799e;
+    border: 1px solid #7a6390;
+    border-radius: 20px;
+  }
+
+  .root__avtoriz-container {
+    height: 500px;
+    width: 300px;
+    border: solid 5px black;
+    border-radius: 25px;
+    justify-content: center;
+  }
+
+  .avtoriz-container__heder-div {
+    justify-content: center;
+    display: flex;
+    margin-top: 20px;
+    border-top: 5px solid black;
+    font-size: 20px;
+    font-family: sans-serif;
+  }
+
+  .login-input-div__login-input {
+    font-size: 20px;
+    font-family: Georgia, "Times New Roman", Times, serif;
+    height: 40px;
+    width: 200px;
+    border: 1px solid #fff;
+    background: rgba(255, 255, 255, 0.25);
+    border-radius: 20px;
+    padding: 10px;
+    outline: none;
+  }
+
+  .login-button-div__login-button {
+    height: 50px;
+    width: 90px;
+    margin-top: 10px;
+    background-color: #8b799e;
+    border: 1px solid #7a6390;
+    border-radius: 20px;
+  }
+
+  .avtoriz-container__vindow-body {
+    height: 320px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border-bottom: 5px solid black;
+  }
+
+  .root__log-out-button {
+    height: 30px;
+    width: 30px;
+    border-radius: 20px;
+    background-color: aqua;
+  }
+
+  .message-li__message-ul {
+    list-style: none;
+    display: flex;
+    flex-flow: column-reverse;
+    flex-direction: column;
+  }
