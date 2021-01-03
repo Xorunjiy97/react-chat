@@ -12,22 +12,20 @@ export default class Messenger extends React.PureComponent {
 
     render() {
         return (
-         <div className = {"main-conatiner"}>
+         <div className = {"main-conatiner"}>           
             <div className = {'main-container__header'}>
-                <button className={"main-container__log-out"} children={"X"}>
-                </button>
+                <button className={"main-container__log-out"} children={"X"} />
                 <div className={"header__window-message"}>
                     <div>
                         <ul className={"ul__li"}>
-                            <li className={"message-li__message-ul"}/>
+                            <li className={"message-li__message-ul"} />
                         </ul>
                     </div>
                 </div>
             </div>
             <div className={"main-container__footer"}>
                 <input className={" footer__input-footer"} />
-                <button className={" footer__button-footer"} children={"Send"}>
-                </button>
+                <button className={" footer__button-footer"} children={"Send"} />
             </div>
         </div>
         )

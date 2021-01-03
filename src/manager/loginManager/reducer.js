@@ -2,23 +2,23 @@ import constants from '../../constants';
 
 const initialState = {
         name: '',
-        isLogged: false,
-
+        isLoged: false,
+    
 }
-
-const loginPage = (state = initialState, action) => {
+// eslint-disable-next-line
+export default (state = initialState, action) => {
     switch (action.type) {
         case constants.SAVE_CURRENT_USER_STORE:
             return {
                 ...state,
                     name: action.payload,
-
+               
             }
             case constants.OPEN_CHAT_PAGE:
             return {
-
+                
                 ...state,
-                isLogged: true,
+                isLoged: true,
             };
         case constants.OPEN_AUTORISATION_PAGE:
             return {
@@ -29,5 +29,3 @@ const loginPage = (state = initialState, action) => {
             return state;
     }
 }
-
-export default loginPage;

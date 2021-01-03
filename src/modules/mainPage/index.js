@@ -1,9 +1,9 @@
-import Component from './MainPage.jsx';
+import Component from './MainPage';
 import * as selectors from './selectors';
 import { connect } from 'react-redux';
 
 const mapStateToProps = state => ({
-    isLogged: selectors.getCurrentUserStatus(state),
+    isLoged: selectors.getCurrentUserStatus(state),
 });
 
 
