@@ -38,8 +38,9 @@ class Login extends React.PureComponent {
         event.preventDefault();
         if(this.state.login.length !== 0){
             saveCurrentUser(this.state.login);
-            const { user } = this.state.login;
-            api.logIn(user).then(res => this.checkLogIn(res))
+            const userName = this.state.login;
+            console.log(userName);
+            api.logIn({ userName }).then(res => this.checkLogIn(res))
         } else {
             alert('Введите имя пользователя');
         }

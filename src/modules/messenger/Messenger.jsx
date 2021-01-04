@@ -32,30 +32,35 @@ export default class Messenger extends React.PureComponent {
         const {
             onSaveMessage,
         } = this;
-        console.log(value);
         onSaveMessage(value);
+
+        // clearInput = event => { event.target.value = ''; }
     }
 
     onSaveMessage = value => {
         this.setState(() => ({
             message: value,
+            input: value,
         }));
-
     }
 
     handleClick = event => {
         const {
-            currentUserLoged, 
+            currentUserLoged,
+            user
         } = this.props;
         const { name } = event.target;
         event.preventDefault();
         
         if(name === "send") {
            this.sendMessage(this.state.message);
+           this.setState({
+                input : ''
+           });
         } else {
             currentUserLoged();
-            const { user } = this.props.user;
-            api.logOut(user);
+            console.log(user);
+            api.logOut( { user } );
         }
     }
 
@@ -63,7 +68,6 @@ export default class Messenger extends React.PureComponent {
         const {
             sendMessage,
             user
-
         } = this.props;
         const {
             onSaveMessage,
@@ -71,8 +75,6 @@ export default class Messenger extends React.PureComponent {
         if(message.length !== 0){
             onSaveMessage(message);
             const messageInfo = {user : user, message: message};
-            // console.log(this.props)
-            // console.log(messageInfo);
             sendMessage(messageInfo);
             this.ws.sendMessage(messageInfo);
         } else {
@@ -103,7 +105,7 @@ export default class Messenger extends React.PureComponent {
                 </div>
             </div>
             <div className={"main-container__footer"}>
-                <input className={" footer__input-footer"} onChange={handleInput} />
+                <input className={" footer__input-footer"} onChange={handleInput} value={this.state.input} />
                 <button name={"send"} className={" footer__button-footer"} children={"Send"} onClick={handleClick} />
             </div>
         </div>
