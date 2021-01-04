@@ -25,14 +25,6 @@ class WS {
     sendMessage = message => {
         this._ws.send(JSON.stringify(message));
     }
-
-    addUser = user => {
-        this._ws.add(JSON.stringify(user));
-    }
-
-    deleteUser = user => {
-        this._ws.delete(JSON.stringify(user));
-    }
 }
 
 export default WS;

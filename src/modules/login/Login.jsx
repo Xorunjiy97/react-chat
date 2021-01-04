@@ -1,7 +1,6 @@
 import React from 'react';
 import './loginStyles.css';
-import Ws from '../../websocket/Websoket';
-
+import * as api from '../../REST'
 class Login extends React.PureComponent {
     constructor(props) {
         super(props);
@@ -9,7 +8,6 @@ class Login extends React.PureComponent {
         this.state = {
             login: '',
         };
-        this.ws = Ws();
     }
 
     handleInput = event => {
@@ -22,6 +20,7 @@ class Login extends React.PureComponent {
         } = this;
 
          if (name === 'login') {
+
             onSaveLogin(value);
         }
     }
@@ -35,14 +34,27 @@ class Login extends React.PureComponent {
     handleClick = event => {
         const { 
             saveCurrentUser,
-            currentUserLoged 
             } = this.props;
         event.preventDefault();
-
-        saveCurrentUser(this.state.login);
-        currentUserLoged();
-
+        if(this.state.login.length !== 0){
+            saveCurrentUser(this.state.login);
+            const { user } = this.state.login;
+            api.logIn(user).then(res => this.checkLogIn(res))
+        } else {
+            alert('Введите имя пользователя');
+        }
     }
+
+    checkLogIn = result => {
+        const { 
+            currentUserLoged 
+            } = this.props;
+        if(result){
+            currentUserLoged();
+        }else{
+            alert("Данное имя на данный момент закреплено за другим пользователем. Попробуйте другое имя.");
+        }
+      }
 
     render() {
         const {
@@ -53,25 +65,24 @@ class Login extends React.PureComponent {
             handleInput,
         } = this;
         return (
-            <div className = {'root__avtoriz-container'}>
-                <div className = {'avtoriz-container__heder-div'}>
-                    <h1 className = {'heder-div__heder-text'}
+            <div className={'root__avtoriz-container'}>
+                <div className={'avtoriz-container__heder-div'}>
+                    <h1 className={'heder-div__heder-text'}
                         children={'Salam Aleykum'}
                     ></h1>
                 </div>
-                <div className = {'window__login-body'}>
-                    <div className = {'avtoriz-container__login-input-div'}>
+                <div className={'window__login-body'}>
+                    <div className={'avtoriz-container__login-input-div'}>
                         <input name={'login'}
                             placeholder= {'Введите логин...'}
-                            className = {'login-input-div__login-input'}
+                            className={'login-input-div__login-input'}
                             onChange={handleInput}
-                            /> 
-                        
+                        /> 
                     </div>
                 </div>
-                <div className = {'avtoriz-container__login-button-div'}>
-                    <button id = {'login-button'}
-                    className = {'login-button-div__login-button'}
+                <div className={'avtoriz-container__login-button-div'}>
+                    <button id={'login-button'}
+                    className={'login-button-div__login-button'}
                     onClick={handleClick}
                     ></button>
                 </div>

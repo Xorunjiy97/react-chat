@@ -1,6 +1,8 @@
 import React from 'react';
 import { getChat } from './actions';
 import './messangerStyled.css';
+import Ws from '../../websocket/Websoket';
+import * as api from '../../REST';
 
 export default class Messenger extends React.PureComponent {
     constructor(props) {
@@ -8,7 +10,19 @@ export default class Messenger extends React.PureComponent {
 
         this.state = {
             message: '',
+            allMessages: [],
         }
+
+        this.ws = new Ws();
+
+        api.getAllMessages().then(res => this.printChat(res));
+        this.ws.getOnMessage(this.printChat.bind(this));
+    }
+
+    printChat = chat => {
+        this.setState({
+            allMessages: chat,
+        });
     }
 
     handleInput = event => {
@@ -32,27 +46,37 @@ export default class Messenger extends React.PureComponent {
     handleClick = event => {
         const {
             currentUserLoged, 
-            sendMessage,
-            chat,
-            user
-
         } = this.props;
         const { name } = event.target;
-        const {
-            onSaveMessage,
-        } = this;
         event.preventDefault();
         
         if(name === "send") {
-            onSaveMessage(this.state);
-            const messageInfo = {user : user, message: this.state.message};
-            console.log(this.props)
-            console.log(messageInfo);
-            sendMessage(messageInfo);
-            
-            
+           this.sendMessage(this.state.message);
         } else {
             currentUserLoged();
+            const { user } = this.props.user;
+            api.logOut(user);
+        }
+    }
+
+    sendMessage = message => {
+        const {
+            sendMessage,
+            user
+
+        } = this.props;
+        const {
+            onSaveMessage,
+        } = this;
+        if(message.length !== 0){
+            onSaveMessage(message);
+            const messageInfo = {user : user, message: message};
+            // console.log(this.props)
+            // console.log(messageInfo);
+            sendMessage(messageInfo);
+            this.ws.sendMessage(messageInfo);
+        } else {
+            alert('Введите сообщение');
         }
     }
 
@@ -63,24 +87,24 @@ export default class Messenger extends React.PureComponent {
         } = this;
 
         return (
-         <div className = {"main-conatiner"}>           
-            <div className = {'main-container__header'}>
-                <button name={"close"} className={"main-container__log-out"} children={"X"} onClick = {handleClick} />
+         <div className={"main-conatiner"}>           
+            <div className={'main-container__header'}>
+                <button name={"close"} className={"main-container__log-out"} children={"X"} onClick={handleClick} />
                 <div className={"header__window-message"}>
                     <div>
                         <ul className={"ul__li"} >
-                        { // здесь будет отрисовано необходимое кол-во компонентов
-                        this.props.chat.map((item) => (
-                        <li name = {"li"} children = {`${item.user}    ` + `${item.message}`} />
-                         ))
-                         }
+                            { // здесь будет отрисовано необходимое кол-во компонентов
+                                this.state.allMessages.map((item) => (
+                                    <li children= { `${item.user}    ` + `${item.message}`} />
+                                ))
+                            }
                         </ul>
                     </div>
                 </div>
             </div>
             <div className={"main-container__footer"}>
-                <input className={" footer__input-footer"} onChange = {handleInput} />
-                <button name = {"send"} className={" footer__button-footer"} children={"Send"} onClick = {handleClick} />
+                <input className={" footer__input-footer"} onChange={handleInput} />
+                <button name={"send"} className={" footer__button-footer"} children={"Send"} onClick={handleClick} />
             </div>
         </div>
         )

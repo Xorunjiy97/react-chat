@@ -25,6 +25,7 @@ export default (state = initialState, action) => {
             return {
                 ...state,
                 isLoged: false,
+                user : '',
             };
         case constants.SAVE_CURRENT_MESSAGE_STORE:
             return {
