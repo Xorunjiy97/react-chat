@@ -1,5 +1,6 @@
 import React from 'react';
 import './loginStyles.css';
+import Ws from '../../websocket/Websoket';
 
 class Login extends React.PureComponent {
     constructor(props) {
@@ -7,7 +8,8 @@ class Login extends React.PureComponent {
 
         this.state = {
             login: '',
-        }
+        };
+        this.ws = Ws();
     }
 
     handleInput = event => {

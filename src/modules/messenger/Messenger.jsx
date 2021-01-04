@@ -72,9 +72,8 @@ export default class Messenger extends React.PureComponent {
                         { // здесь будет отрисовано необходимое кол-во компонентов
                         this.props.chat.map((item) => (
                         <li name = {"li"} children = {`${item.user}    ` + `${item.message}`} />
-                    ))
-                }
-
+                         ))
+                         }
                         </ul>
                     </div>
                 </div>
