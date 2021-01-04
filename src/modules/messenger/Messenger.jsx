@@ -89,31 +89,43 @@ export default class Messenger extends React.PureComponent {
         } = this;
 
         return (
-         <div className={"main-conatiner"}>           
-            <div className={'main-container__header'}>
-                <button name={"close"} className={"main-container__log-out"} children={"X"} onClick={handleClick} />
-                <div className={"header__window-message"}>
-                    <div>
-                        <ul className={"ul__li"} >
-                            { // здесь будет отрисовано необходимое кол-во компонентов
-                                this.state.allMessages.map((item, index) => (
-                                    <Message
-                                    key = {index}
-                                    user = {item.user}
-                                    text = {item.message}
-                                    currentUser = {this.props.user}
-                                    />
-                                ))
-                            }
-                        </ul>
+            <div className = {"main-conatiner"}>  
+                <div className = {'container__head'}>
+                    <div/>
+                </div>  
+                <div className = {'container__message-input-btn'}>
+                    <div className = {'main-container__header'}>
+                        <div className = {"header__window-message"}>
+                            <div>
+                                <ul className = {"window-message__list"} >
+                                    { 
+                                        this.props.chat.map((item, index) => (
+                                            <Message key = {index}
+                                                     user = {item.user}
+                                                     text = {item.message}
+                                                     currentUser = {this.props.user}/>
+                                        ))
+                                    }
+                                </ul>
+                            </div>
+                        </div>
                     </div>
+                    <div className = {"main-container__container-input-btn"}>
+                        <input onChange = {handleInput}
+                               className = {" container-input-btn__input"} />
+                        <button name = {"send"} 
+                                onClick = {handleClick} 
+                                children = {"Send"} 
+                                className = {" container-input-btn__button"} />
+                    </div>
+                </div>    
+                <div className = {'main-container__container-log-out'}>
+                    <button name = {"close"} 
+                            onClick = {handleClick} 
+                            children = {"X"} 
+                            className = {"container-log-out__btn"} />
                 </div>
             </div>
-            <div className={"main-container__footer"}>
-                <input className={" footer__input-footer"} onChange={handleInput} value={this.state.input} />
-                <button name={"send"} className={" footer__button-footer"} children={"Send"} onClick={handleClick} />
-            </div>
-        </div>
         )
     }
 }

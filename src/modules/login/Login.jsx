@@ -59,33 +59,40 @@ class Login extends React.PureComponent {
 
     render() {
         const {
-            currentUserName,
-        } = this.props;
-        const {
             handleClick,
             handleInput,
         } = this;
+
         return (
-            <div className={'root__avtoriz-container'}>
-                <div className={'avtoriz-container__heder-div'}>
-                    <h1 className={'heder-div__heder-text'}
-                        children={'Salam Aleykum'}
-                    ></h1>
+            <div className = {'root__avtoriz-container'}>
+                <div className = {' root__line'}>
+                    <div/>
                 </div>
-                <div className={'window__login-body'}>
-                    <div className={'avtoriz-container__login-input-div'}>
-                        <input name={'login'}
-                            placeholder= {'Введите логин...'}
-                            className={'login-input-div__login-input'}
-                            onChange={handleInput}
-                        /> 
+                <div className = {'root__container-header'}>
+                    <div className = {'avtoriz-container__header-div'}>
+                        <h1 children={'Salam Aleykum'}
+                            className = {'header-div__header-text'}>  
+                        </h1>
+                    </div>
+                    <div className = {'window__login-body'}>
+                        <div className = {'avtoriz-container__login-input-div'}>
+                            <input name={'login'}
+                                onChange={handleInput}
+                                className = {'login-input-div__login-input'}
+                                placeholder= {'Введите логин...'}/>                             
+                        </div>
+                    </div>
+                    <div className = {'avtoriz-container__login-button-div'}>
+                        <button id = {'login-button'}
+                                onClick={handleClick}
+                                children= {'Next'}
+                                className = {'login-button-div__login-button'}>
+                        </button>                    
                     </div>
                 </div>
-                <div className={'avtoriz-container__login-button-div'}>
-                    <button id={'login-button'}
-                    className={'login-button-div__login-button'}
-                    onClick={handleClick}
-                    ></button>
+                <div className = {'avtoriz-container__container-btn'}>
+                    <button className = {'container-btn__btn-circle'}>
+                    </button>
                 </div>
             </div>
         );
