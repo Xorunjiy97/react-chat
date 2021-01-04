@@ -1,6 +1,7 @@
 import React from 'react';
 import { getChat } from './actions';
 import './messangerStyled.css';
+import Message from './components/Message.jsx'
 
 export default class Messenger extends React.PureComponent {
     constructor(props) {
@@ -70,8 +71,13 @@ export default class Messenger extends React.PureComponent {
                     <div>
                         <ul className={"ul__li"} >
                         { // здесь будет отрисовано необходимое кол-во компонентов
-                        this.props.chat.map((item) => (
-                        <li name = {"li"} children = {`${item.user}    ` + `${item.message}`} />
+                        this.props.chat.map((item, index) => (
+                            <Message
+                                key = {index}
+                                user = {item.user}
+                                text = {item.message}
+                                currentUser = {this.props.user}
+                                />
                     ))
                 }
 
