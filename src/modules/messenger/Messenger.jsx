@@ -33,8 +33,6 @@ export default class Messenger extends React.PureComponent {
             onSaveMessage,
         } = this;
         onSaveMessage(value);
-
-        // clearInput = event => { event.target.value = ''; }
     }
 
     onSaveMessage = value => {
