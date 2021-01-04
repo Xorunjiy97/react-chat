@@ -110,7 +110,8 @@ export default class Messenger extends React.PureComponent {
                     </div>
                     <div className = {"main-container__container-input-btn"}>
                         <input onChange = {handleInput}
-                               className = {" container-input-btn__input"} />
+                               className = {" container-input-btn__input"}
+                               value = {this.state.input} />
                         <button name = {"send"} 
                                 onClick = {handleClick} 
                                 children = {"Send"} 
