@@ -1,8 +1,8 @@
 import React from 'react';
-import { getChat } from './actions';
 import './messangerStyled.css';
 import Ws from '../../websocket/Websoket';
 import * as api from '../../REST';
+import Message from './components/Message.jsx'
 
 export default class Messenger extends React.PureComponent {
     constructor(props) {
@@ -96,8 +96,13 @@ export default class Messenger extends React.PureComponent {
                     <div>
                         <ul className={"ul__li"} >
                             { // здесь будет отрисовано необходимое кол-во компонентов
-                                this.state.allMessages.map((item) => (
-                                    <li children= { `${item.user}    ` + `${item.message}`} />
+                                this.state.allMessages.map((item, index) => (
+                                    <Message
+                                    key = {index}
+                                    user = {item.user}
+                                    text = {item.message}
+                                    currentUser = {this.props.user}
+                                    />
                                 ))
                             }
                         </ul>
