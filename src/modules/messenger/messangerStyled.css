@@ -1,77 +1,73 @@
 .main-conatiner {
-    height: 550px;
-    width: 300px;
-    border: solid 5px black;
-    border-radius: 25px;
-    justify-content: center;
-  }
-  
-  .header__window-message {
-    border: 1px solid black;
-    display: flex;
-    height: 400px;
-    margin: 0 10px;
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
-    background-color: #45668e;
-  
-  }
-  
-  .main-container__log-out {
-    background-color: aquamarine;
-    border-radius: 50%;
-    height: 30px;
-    margin: 5px;
-  }
-  
-  .message-li__message-ul {
-    list-style: none;
-    display: flex;
-    flex-flow: column-reverse;
-    flex-direction: column;
-  }
-  
-  .ul__li {
-    border: solid 1px black;
-    border-radius: 10px;
-    padding-left: 10px;
-    margin-bottom: 5px;
-    width: 200px;
-    display: table-cell;
-    vertical-align: middle;
-    color: white;
-    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-    overflow-y: auto;
-  }
-  
-  .main-container__footer {
-    margin: 0 10px;
-    height: 50px;
-    align-items: center;
-    display: flex;
-    margin-top: 20px;
-    margin-left: 20px;
-    border-radius: 10px;
-    display: flex;
-  }
-  
-  .footer__input-footer {
-    font-size: 20px;
-    font-family: Georgia, "Times New Roman", Times, serif;
-    height: 30px;
-    width: 200px;
-    border: 1px solid black;
-    background: rgba(255, 255, 255, 0.25);
-    border-radius: 20px;
-    padding: 8px;
-    outline: none;
-  }
-  
-  .footer__button-footer {
-    height: 44px;
-    width: 60px;
-    margin-left: 10px;
-    background-color: #8b799e;
-    border: 1px solid #7a6390;
-    border-radius: 20px;
-  }
+  height: 550px;
+  width: 300px;
+  border: solid 5px black;
+  border-radius: 25px;
+  justify-content: center;
+}
+
+.container__head {
+  margin-top: 20px;
+  border-bottom: 5px solid black;
+}
+
+.header__window-message {
+  height: 370px;
+  display: flex;
+  border: 1px solid black;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  background-image: url("https://downloadwap.com/thumbs2/wallpapers/p2/2019/nature/22/cbdacb8f13002811.jpg");
+}
+
+.container__message-input-btn {
+  background-image: url("https://w-hatsapp.ru/wp-content/uploads/2015/10/fon-2.png");
+}
+
+.main-container__header {
+  padding: 10px;
+}
+
+.main-container__container-input-btn {
+  height: 50px;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+}
+
+.container-input-btn__input {
+  height: 30px;
+  width: 200px;
+  padding: 8px;
+  font-size: 20px;
+  border: 1px solid black;
+  border-radius: 20px;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  background: rgba(253, 253, 253, 0.658);
+  outline: none;
+}
+
+.container-input-btn__button {
+  height: 44px;
+  width: 60px;
+  margin-left: 10px;
+  border-radius: 20px;
+  background-color: #8b799e;
+  border: 1px solid #7a6390;
+  outline: none;
+}
+
+.main-container__container-log-out {
+  border-top: solid 5px black;
+  display: flex;
+  justify-content: center;
+}
+
+.container-log-out__btn {
+  height: 50px;
+  width: 50px;
+  margin-top: 3px;
+  border-radius: 50%;
+  border: 2px solid black;
+  outline: none;
+}

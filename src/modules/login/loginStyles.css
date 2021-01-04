@@ -1,134 +1,112 @@
 body {
-    background: #ccc;
-  }
-  
-  #root {
-    margin-top: 100px;
-    justify-content: center;
-    display: flex;
-  }
-  
-  .root__main-container {
-    height: 500px;
-    width: 300px;
-    border: solid 5px black;
-    border-radius: 25px;
-    justify-content: center;
-  }
-  
-  .main-container__message-div {
-    border: solid 2px black;
-    display: flex;
-    height: 370px;
-    margin: 10px;
-    margin-top: 20px;
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
-    background-color: #45668e;
-  }
-  
-  .main-container__footer-container {
-    margin: 0 10px;
-    height: 50px;
-    align-items: center;
-    display: flex;
-    margin-top: 20px;
-    margin-left: 20px;
-    border-radius: 10px;
-    display: flex;
-  }
-  
-  .footer-container__text-arena {
-    font-size: 20px;
-    font-family: Georgia, "Times New Roman", Times, serif;
-    height: 40px;
-    width: 200px;
-    border: 1px solid #fff;
-    background: rgba(255, 255, 255, 0.25);
-    border-radius: 20px;
-    padding: 10px;
-    outline: none;
-  }
-  
-  .footer-container__send-message {
-    height: 44px;
-    width: 60px;
-    margin-left: 10px;
-    background-color: #8b799e;
-    border: 1px solid #7a6390;
-    border-radius: 20px;
-  }
-  
-  .root__avtoriz-container {
-    height: 500px;
-    width: 300px;
-    border: solid 5px black;
-    border-radius: 25px;
-    justify-content: center;
-  }
-  
-  .avtoriz-container__heder-div {
-    justify-content: center;
-    display: flex;
-    margin-top: 20px;
-    border-top: 5px solid black;
-    font-size: 20px;
-    font-family: sans-serif;
-  }
-  
-  .login-input-div__login-input {
-    font-size: 20px;
-    font-family: Georgia, "Times New Roman", Times, serif;
-    height: 40px;
-    width: 200px;
-    border: 1px solid #fff;
-    background: rgba(255, 255, 255, 0.25);
-    border-radius: 20px;
-    padding: 10px;
-    outline: none;
-  }
-  
-  .login-button-div__login-button {
-    height: 50px;
-    width: 90px;
-    margin-top: 10px;
-    background-color: #8b799e;
-    border: 1px solid #7a6390;
-    border-radius: 20px;
-  }
-  
-  .avtoriz-container__vindow-body {
-    height: 320px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    border-bottom: 5px solid black;
-  }
-  
-  .root__log-out-button {
-    height: 30px;
-    width: 30px;
-    border-radius: 20px;
-    background-color: aqua;
-  }
-  
-  .message-li__message-ul {
-    list-style: none;
-    display: flex;
-    flex-flow: column-reverse;
-    flex-direction: column;
-  }
-  
-  .ul_li {
-    border: solid 1px black;
-    border-radius: 10px;
-    padding-left: 10px;
-    margin-bottom: 5px;
-    width: 200px;
-    display: table-cell;
-    vertical-align: middle;
-    color: white;
-    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-    overflow-y: auto;
-  }
+  /* background: url("https://i.pinimg.com/originals/02/5d/62/025d62dce0f3d500c5734381fefed36a.png")
+    no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover; */
+}
+
+#root {
+  margin-top: 50px;
+  justify-content: center;
+  display: flex;
+}
+
+.root__line {
+  margin-top: 20px;
+  border-bottom: 5px solid black;
+}
+
+.root__container-header{
+  background-image: url("https://w-hatsapp.ru/wp-content/uploads/2015/10/fon-8.png");
+}
+
+.root__main-container {
+  height: 500px;
+  width: 300px;
+  border: solid 5px black;
+  border-radius: 25px;
+  justify-content: center;
+}
+
+.root__avtoriz-container {
+  height: 550px;
+  width: 300px;
+  border: solid 5px black;
+  border-radius: 25px;
+  justify-content: center;
+}
+
+.avtoriz-container__header-div {
+  /* margin-top: 20px;
+  border-top: 5px solid black; */
+  justify-content: center;
+  display: flex;
+  font-size: 20px;
+  font-family: sans-serif;
+}
+
+.header-div__header-text {
+  margin-top: 70px;
+  font-family: "Cabin", Helvetica, Arial, sans-serif;
+  color: grey;
+}
+
+.window__login-body {
+  margin-top: 50px;
+  display: flex;
+  justify-content: center;
+}
+
+.login-input-div__login-input {
+  height: 40px;
+  width: 200px;
+  padding: 10px;
+  font-size: 20px;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  border: 1px solid #fff;
+  background: rgba(255, 255, 255, 0.25);
+  border-radius: 20px;
+  outline: none;
+}
+
+.avtoriz-container__login-button-div {
+  padding-bottom: 145px;
+  border-bottom: 5px solid black;
+  justify-content: center;
+  display: flex;
+}
+
+.login-button-div__login-button {
+  height: 50px;
+  width: 90px;
+  margin-top: 10px;
+  background-color: #8b799e;
+  border: 1px solid #7a6390;
+  border-radius: 20px;
+  outline: none;
+}
+
+/* .avtoriz-container__window-body {
+  height: 320px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border-bottom: 5px solid black;
+} */
+
+.avtoriz-container__container-btn {
+  display: flex;
+  justify-content: center;
+}
+
+.container-btn__btn-circle {
+  height: 50px;
+  width: 50px;
+  margin-top: 4px;
+  border-radius: 50%;
+  border: 2px solid black;
+  outline: none;
+}
