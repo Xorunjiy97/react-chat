@@ -20,6 +20,7 @@
   list-style: none;
   flex-flow: column-reverse;
   flex-direction: column;
+  overflow-y: auto;
   background-image: url("https://downloadwap.com/thumbs2/wallpapers/p2/2019/nature/22/cbdacb8f13002811.jpg");
 }
 
@@ -83,25 +84,58 @@
   display: table-cell;
   vertical-align: middle;
   color: black;
+  margin-left: 15px;
   background: white;
   font-family: -apple-;
+  display: flex;
+  flex-direction: column;
 }
 
 .current-user-message {
   padding-left: 5px;
   display: flex;
-  flex-direction: column;
   background: black;
   color: white;
+  margin-left: 50px;
 }
 
 .message__user-message {
-  margin-left: 50px;
   font-size: 20px;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  font-style: italic;
 }
 
 .window-message__list {
   padding: 3px;
   display: flex;
-  /* justify-content: flex-end; */
+  flex-direction: column;
+
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #8b799e; 
+  border-radius: 1px;
+}
+
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px grey; 
+  border-radius: 1px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #7a6390;
+}
+
+.message__user-name {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  color: tomato;
+  font-weight: bold;
 }

@@ -53,7 +53,8 @@ export default class Messenger extends React.PureComponent {
         if(name === "send") {
            this.sendMessage(this.state.message);
            this.setState({
-                input : ''
+                message: '',
+                input : '',
            });
         } else {
             currentUserLoged();

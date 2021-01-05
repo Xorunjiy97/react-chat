@@ -6,18 +6,16 @@ const initialState = {
         chat: []
     
 }
-// eslint-disable-next-line
-export default (state = initialState, action) => {
+
+ const loginPageRaducer = (state = initialState, action) => {
     switch (action.type) {
         case constants.SAVE_CURRENT_USER_STORE:
             return {
                 ...state,
-                    user: action.payload,
-               
+                user: action.payload
             }
-            case constants.OPEN_CHAT_PAGE:
-            return {
-                
+        case constants.OPEN_CHAT_PAGE:
+            return {  
                 ...state,
                 isLoged: true,
             };
@@ -36,3 +34,5 @@ export default (state = initialState, action) => {
             return state;
     }
 }
+
+export default loginPageRaducer;
