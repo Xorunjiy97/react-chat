@@ -97,7 +97,7 @@ export default class Messenger extends React.PureComponent {
                             <div>
                                 <ul className = {"window-message__list"} >
                                     { 
-                                        this.props.chat.map((item, index) => (
+                                        this.state.allMessages.map((item, index) => (
                                             <Message key = {index}
                                                      user = {item.user}
                                                      text = {item.message}
