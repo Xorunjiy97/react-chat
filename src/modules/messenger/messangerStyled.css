@@ -76,21 +76,32 @@
 }
 
 .chat-window__message {
-  border: solid 1px black;
+  width: 200px;
   border-radius: 10px;
   padding-left: 2px;
   margin-bottom: 5px;
-  width: 200px;
   display: table-cell;
   vertical-align: middle;
-  color: white;
+  color: black;
+  background: white;
   font-family: -apple-;
 }
 
 .current-user-message {
-  padding-left: 20px;
+  padding-left: 5px;
+  display: flex;
+  flex-direction: column;
+  background: black;
+  color: white;
+}
+
+.message__user-message {
+  margin-left: 50px;
+  font-size: 20px;
 }
 
 .window-message__list {
   padding: 3px;
+  display: flex;
+  justify-content: flex-end;
 }
